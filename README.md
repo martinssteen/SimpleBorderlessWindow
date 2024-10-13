@@ -2,6 +2,8 @@
 
 Simple tool which removes the majority of a border, but still keeping the resizing functionality.
 
+![img.png](docs/img.png)
+
 **This tool has only been tested on windows 11, so no guarantees it will work on other versions.**
 
 Also, I have personally used this for a few months now, and have not had any issues with it. However, I cannot guarantee that it will work for you, or that it will not cause any issues. **Use at your own risk.**
