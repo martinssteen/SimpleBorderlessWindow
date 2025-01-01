@@ -41,6 +41,5 @@ pyinstaller --onefile --noconsole --add-data 'icon.ico;.' main.py -n BorderRemov
 
 ## Known Issues
 
-- Applications with changing window titles cannot be excluded or favorited (i.e some internet browsers which has the name of your current tab)
 - Applications with custom borders (non-default windows borders) cannot be changed
 - When an application is excluded, you have to manually remove it from the excluded list in the settings file. (found `C:\Users\[USERNAME]]\AppData\Local\SimpleBorderlessWindow\IGNORED_WINDOWS.txt`)

@@ -11,9 +11,14 @@ old_style = {}
 
 BORDER_OFFSET = 30
 
+applications = {}
+
 
 def get_window_handle(title):
-    return win32gui.FindWindow(None, title)
+    if applications[title] is None:
+        return win32gui.FindWindow(None, title)
+    else:
+        return applications[title]
 
 
 def resize_window(title):
@@ -135,9 +140,14 @@ def restore_window_border(title):
 
 
 def get_all_window_names():
+    global applications
+    applications = {}
     def callback(hwnd, strings):
         if win32gui.IsWindowVisible(hwnd):
-            strings.append(win32gui.GetWindowText(hwnd))
+            applicationTitle = win32gui.GetWindowText(hwnd)
+            if applicationTitle != '':
+                applications[applicationTitle] = hwnd
+                strings.append(applicationTitle)
 
     windows = []
     win32gui.EnumWindows(callback, windows)
